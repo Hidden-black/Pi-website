@@ -27,6 +27,12 @@ body {
     border-radius: 4px;
 }
 
+body,
+button,
+a {
+    cursor: none;
+}
+
 .cursor {
     width: 16px;
     height: 16px;
@@ -58,9 +64,23 @@ body {
     transition: all .3s ease-in-out;
 }
 
+button {
+    padding: 10px 20px;
+    background-color: #1aa095;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: none;
+}
+
+a {
+    text-decoration: none;
+    color: #1aa095;
+    cursor: none;
+}
+
 .wrapper {
     height: 10vh;
-    /*This part is important for centering*/
     display: flex;
     align-items: center;
     justify-content: center;
