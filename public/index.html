@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
-    <script type="text/javascript" src="js/index.js"></script>
     <meta rel="icon" herf="images/pfp.png">
     <title>Home - Shashwat Rai</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -14,13 +13,25 @@
     <meta name="description" content="Hi! I am Shashwat.">
     <meta name="og:image" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 
 <body>
     <div class="cursor"></div>
-    <br><br><br><br>
+    <script>
+        const cursor = document.querySelector('.cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+    </script>
+
+    <br><br><br>
+
     <img src="images/Photos_kpHZQtTQHy.png" class="img">
-    <br><br><br><br>
+    <br><br><br>
     <div class="wrapper">
         <div class="typing-animation">
             Hello! I am Shashwat.
@@ -34,7 +45,7 @@
             <li> <a href="http://instagram.com/"><i class="fa fa-instagram"></i></a> </li>
         </ul>
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
 
     <div class="wrapper">
         <div class="proto">
@@ -42,13 +53,37 @@
         </div>
     </div>
 
-    <div class="card">
-        <img src="bb.png" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>Robolac</b></h4>
-            <p>A discord bot</p>
-        </div>
-    </div>
+    <section class="hero-section ">
+        <div class="card-grid ">
+            <a class="card " href="">
+                <div class="card__background " style="background-image: url(images/bb.jpg) "></div>
+                <div class="card__content ">
+                    <h3 class="card__heading ">Project 1</h3>
+                </div>
+            </a>
+            <a class="card " href="">
+                <div class="card__background " style="background-image: url(images/2.jpg) "></div>
+                <div class="card__content ">
+                    <h3 class="card__heading ">Project 2</h3>
+                </div>
+            </a>
+            <a class="card " href="">
+                <div class="card__background " style="background-image: url(images/3.jpg) "></div>
+                <div class="card__content ">
+                    <h3 class="card__heading ">Project 3</h3>
+                </div>
+                </li>
+                <a class="card " href="">
+                    <div class="card__background " style="background-image: url(images/4.jpg) "></div>
+                    <div class="card__content ">
+                        <h3 class="card__heading ">Project 4</h3>
+                    </div>
+                </a>
+                <div>
+    </section>
+    <p align="right">**Images are Placeholder &nbsp;</p>
+
+
 
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>Hi
