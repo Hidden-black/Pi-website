@@ -47,6 +47,7 @@ start() {
 }
 
 main() {
+    get_public_ip
     pull_git
     configure_nginx
     start
