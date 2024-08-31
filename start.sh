@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NGINX_CONFIG_FILE="/etc/nginx/sites-available/pi-website"
+NGINX_CONFIG_FILE="/etc/nginx/sites-available/pi-website-1"
 EXPRESS_PORT="5000"
 APP_DIR="/var/www/pi-website"
 GITHUB_REPO="https://github.com/Hidden-black/Pi-website.git"
