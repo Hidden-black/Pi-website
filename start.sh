@@ -51,8 +51,7 @@ main() {
     configure_nginx
     start
 
-    echo "Complete! Website should be Live at your public IP"
+    echo "Complete! Website should be Live at $PUBLIC_IP"
     echo "Remember to enable port forwarding in your router!"
 }
-
 main
