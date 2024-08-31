@@ -4,6 +4,7 @@ NGINX_CONFIG_FILE="/etc/nginx/sites-available/pi-website"
 EXPRESS_PORT="5000"
 APP_DIR="/var/www/pi-website"
 GITHUB_REPO="https://github.com/Hidden-black/Pi-website.git"
+lip_address=$(hostname -I | awk '{print $1}')
 
 get_public_ip() {
     PUBLIC_IP=$(curl -s http://checkip.amazonaws.com)
@@ -41,7 +42,7 @@ server {
     server_name $PUBLIC_IP;
 
     location / {
-        proxy_pass http://localhost:$EXPRESS_PORT;
+        proxy_pass http://$lip_address:$EXPRESS_PORT;
         proxy_set_header Host \$host;
         proxy_set_header X-Real-IP \$remote_addr;
         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -55,7 +56,7 @@ EOL
     sudo systemctl enable nginx
 }
 
-start_app_with_pm2() {
+start_pm2() {
     echo "Starting the Express app with PM2..."
     cd $APP_DIR
     pm2 start server.js --name "Pi-website"
@@ -69,7 +70,7 @@ main() {
     clone_app
     install_dependencies
     configure_nginx
-    start_app_with_pm2
+    start_pm2
 
     echo "Complete! Website should be Live at your public IP"
     echo "Remember to enable port forwarding in your router!"
