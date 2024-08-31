@@ -15,10 +15,12 @@ morgan.token('remote-addr', function(req) {
     return req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 });
 
+app.use(morgan('combined', { stream: accessLogStream }));
+
 function logVisitorIP(ip) {
     if (!visitorIPs.has(ip)) {
         visitorIPs.add(ip);
-        visitorLogStream.write(`${ip}\n`);
+        visitorLogStream.write(`User IP: ${ip} - First visit at ${new Date().toISOString()}\n`);
     }
 }
 
@@ -39,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const AUTH_CREDENTIALS = { username: 'admin', password: 'password' };
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', '/login'));
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
 app.post('/login', (req, res) => {
