@@ -22,7 +22,7 @@ configure_nginx() {
     sudo tee $NGINX_CONFIG_FILE > /dev/null <<EOL
 server {
     listen 80;
-    server_name $PUBLIC_IP;
+    server_name PUBLIC_IP;
 
     location / {
         proxy_pass http://localhost:$EXPRESS_PORT;
