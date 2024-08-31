@@ -6,14 +6,14 @@ APP_DIR="/var/www/pi-website"
 GITHUB_REPO="https://github.com/Hidden-black/Pi-website.git"
 lip_address=$(hostname -I | awk '{print $1}')
 
+get_public_ip() {
+    PUBLIC_IP=$(curl -s http://checkip.amazonaws.com)
+    echo "Public IP: $PUBLIC_IP"
+}
+
 pull_git() {
     echo "Syncing from GitHub..."
-    
-    if [ -d "$APP_DIR" ]; then
-        sudo rm -rf "$APP_DIR"
-    fi
-
-    sudo git  $GITHUB_REPO $APP_DIR
+    sudo git pull $GITHUB_REPO $APP_DIR
     sudo chown -R $USER:$USER $APP_DIR
 }
 
