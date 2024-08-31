@@ -64,6 +64,22 @@ a {
     transition: all .3s ease-in-out;
 }
 
+@media (hover: none) and (pointer: coarse) {
+    body,
+    button,
+    a {
+        cursor: auto;
+    }
+    .cursor {
+        display: none;
+    }
+}
+
+.cursor.animate-in {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 button {
     padding: 10px 20px;
     background-color: #1aa095;

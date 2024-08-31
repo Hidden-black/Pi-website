@@ -21,10 +21,12 @@
     <div class="cursor"></div>
     <script>
         const cursor = document.querySelector('.cursor');
-
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = `${e.clientX}px`;
             cursor.style.top = `${e.clientY}px`;
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            cursor.classList.add('animate-in');
         });
     </script>
 
