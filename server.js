@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const AUTH_CREDENTIALS = { username: 'admin', password: 'password' };
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'login.html'));
+    res.sendFile(path.join(__dirname, 'public', '/login'));
 });
 
 app.post('/login', (req, res) => {
